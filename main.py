@@ -4,6 +4,10 @@ import pandas as pd
 from langchain import OpenAI, LLMChain, PromptTemplate
 from langchain.callbacks.base import BaseCallbackHandler
 import re
+import os 
+
+API_KEY = 'ADD API KEY'
+os.environ['OPENAI_API_KEY'] = API_KEY
 
 def create_chain_from_template(template, input_variables, temperature=.5,callbacks=[], verbose=True):
     prompt = PromptTemplate(
