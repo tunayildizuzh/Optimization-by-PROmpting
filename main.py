@@ -5,9 +5,9 @@ from langchain import OpenAI, LLMChain, PromptTemplate
 from langchain.callbacks.base import BaseCallbackHandler
 import re
 import os 
+from dotenv import load_dotenv
 
-API_KEY = 'ADD API KEY'
-os.environ['OPENAI_API_KEY'] = API_KEY
+load_dotenv()
 
 def create_chain_from_template(template, input_variables, temperature=.5,callbacks=[], verbose=True):
     prompt = PromptTemplate(
